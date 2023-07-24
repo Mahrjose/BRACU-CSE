@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Poppins:wght@400;500;700&display=swap');
+
+
+:root{
+    --brand-green: #08BD80 !important;
+    --brand-lightgreen:rgb(110, 223, 185);
+    --brand-blue: #2D81F7;
+    --brand-yellow: #FFB427;
+    --brand-black: #202C2C !important;
+    --brand-gray: #858585;
+    --brand-lightblue: #8acbf0;
+    --brand-dark : #182020 !important;
+}
+
+*{
+    text-decoration: none;
+}
+
+body{
+    margin: auto;
+    align-items: center;
+    font-family: 'Poppins','Hind Siliguri', sans-serif;
+    background-color: var(--brand-dark) !important;
+    
+}
+::selection{
+    background-color: var(--brand-lightgreen);
+}
+.title{
+    margin-left: 5px !important;
+    margin-right: 5px !important;
+}
+.title h1{
+    border-bottom: 5px solid var(--brand-green);
+    text-align: center;
+    font-size: 40px;
+    color: #fff;
+}
+
+.course-container{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-column-gap: 5px;
+    align-items:flex-start;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    padding: 10px;
+}
+.course-container .main-video, .course-container .courses{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#video-player{
+    border-radius: 10px;
+    width: 55vw;
+    height: 400px;
+    border-color: var(--brand-black);
+    
+}
+
+
+.playlist{
+    background-color: var(--brand-black);
+    border-radius: 10px;
+    color: white;
+    width: 300px;
+}
+.playlist h2{
+  text-align: center;
+  color: white;
+}
+.playlist li button{
+    padding: 5px 20px;
+    margin: 2px;
+    background-color: transparent;
+    color: white;
+    font-size: 16px;
+    border: none;
+    font-family: 'Hind Siliguri', sans-serif;
+}
+.playlist li button:hover{
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+
+footer p{
+  text-align:center;
+  font-size: 90%;
+  color: rgb(255, 255, 255);
+  
+}
+
+.colored-text-1{
+  color: var(--brand-yellow);
+}
+/* Scrollable Playlist */
+
+.playlist {
+  height: 400px;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+@media only screen and (max-width: 992px) {
+  body {
+    margin: 0 5px;
+  }
+  .title h1{
+    font-size: 30px;
+  }
+  .course-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 50px;
+    align-items: center;
+    justify-content: center;
+  }
+  #video-player{
+      width:95%;
+      height: 360px;
+  }
+}
+
+@media only screen and (max-width:680px){
+
+  #video-player{
+    width: 99%;
+    height: 280px;
+  }
+}
