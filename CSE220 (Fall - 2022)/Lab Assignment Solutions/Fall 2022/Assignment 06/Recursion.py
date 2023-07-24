@@ -1,0 +1,226 @@
+# ========Lab 05============
+# Name: Mirza Mahrab Hossain Rudra
+# Student ID: 21101048
+# Section 15
+# ==========================
+
+# =========================== Task 01 =======================
+#========== 1a): Factorial (n!) using recursive algorithm =========
+
+def factorial(n):
+
+    if (n==0 or n==1):
+        return 1
+
+    else: 
+        return n*factorial(n-1)
+
+print("========No. 1a)========")
+print("4! ->", end=" ")
+print(factorial(4))
+print()
+
+#============ 1b): n-th Fibonacci Number============
+
+def fib(n):
+
+    if (n < 2):
+        return n
+    else: 
+        return fib(n-1)+fib(n-2)
+
+print("========No. 1b)========")
+print("Printing 1st fibonacci term:")
+print(fib(1)) 
+print("Printing 20th fibonacci term:")
+print(fib(20))
+print()
+
+#============== 1c): print elements of array =============
+
+def printArray(array, start):
+    if (start == len(array)):
+        return
+    else:
+        print(array[start], end=" ")
+        return printArray(array, start + 1)
+
+print("========No. 1c)========")
+print("Given Array: [10, 20, 30, 40]")
+printArray([10,20,30,40],0)
+print("\n")
+
+#============ 1d): power(base, n) using recursion =========
+
+def powerN(base, n):
+    if (n == 1):
+        return base
+    else:
+        return base*powerN(base,n-1)
+
+print("========No. 1d)========")
+print("powerN(3,1) -> ", end=" ")
+print(powerN(3,1))
+print("powerN(3,2) -> ", end=" ")
+print(powerN(3,2))
+print("powerN(3,3) -> ", end=" ")
+print(powerN(3,3))
+print()
+
+# =========================== Task 02 =======================
+# =========2a): Decimal to Binary  (divide by 2, returns the mods)========
+
+def decToBin(n):
+    if (n == 0):
+        print(0,end='')
+        return 
+    else:
+        decToBin(n//2)
+        print(n % 2 , end='')
+
+# test method decToBin(n) : 
+print("========No. 2a)========")
+print("Decimal to binary: ")
+print("3 ->", end=" ")
+decToBin(3)
+print()
+print("11 ->", end=" ")
+decToBin(11)
+print("\n")
+
+#==================================================================
+
+#Node Class 
+class Node:
+    def __init__(self, data = None, next = None):
+        self.data = data
+        self.next = next
+
+ll_n4 = Node(40)
+ll_n3 = Node(30, ll_n4)
+ll_n2 = Node(20, ll_n3)
+ll_n1 = Node(10, ll_n2)
+
+#============ 02_b : Sum of elements of Linked List===============
+
+def sum(node):
+
+    if (node.next == None):
+        return node.data
+    else: 
+        return node.data + sum(node.next)
+
+print("========No. 2b)========")
+print("Sum of Linked List:")
+print("Linked List: 10 -> 20 -> 30 -> 40\nSum:", end=" ")
+print(sum(ll_n1))
+print()
+
+# ========== 02_c: print ll elements in reverse order ==========
+
+def printRev(node):
+
+    if (node.next == None):
+        print(node.data)
+    else:
+        printRev(node.next)
+        print(node.data)
+
+print("========No. 2c)========")
+print("Recursively Printing Linked List Elems:")
+printRev(ll_n1)
+print()
+
+# ======================== Task 03 =============================
+def hocBuilder(height):
+    if (height < 1):
+        return 0
+    elif (height == 1):
+        return 8
+    else:
+        return 5 + hocBuilder(height - 1)
+
+print("========No. 3)========")
+print("hocBuilder(5) ->" , end=" ")
+print(hocBuilder(5))
+print()
+
+# ========================= Task 04 ==============================
+# ========= 4a) : pattern printing using recursion ========== 
+
+def printPattern(m):
+    if (m == 0):
+        print(" ")
+    else:
+        printPattern(m-1)
+        printSeq(m)
+
+def printSeq(m):
+    if (m == 0):
+        print(" ")
+    else:
+        printSeq(m-1)
+        print(m,end=" ")
+
+print("========No. 4a)========")
+printPattern(5)
+print("\n")
+
+# ======== 4b): Pattern printing ==================
+
+def pattern(m, n):
+    
+    if (m == 0):
+        return
+
+    printSpace(m - 1)
+    printSeq2(n - m + 1)
+    print()
+
+    pattern(m - 1, n)
+
+def printSpace(m):
+    
+    if (m == 0):
+        return
+
+    print(" ", end=" ")
+    printSpace(m - 1)
+
+def printSeq2(m):
+
+    if (m == 0):
+        return
+
+    printSeq2(m - 1)
+    print(m, end =" ")
+
+print("========No. 4a)========")
+print()
+pattern(5,5)
+print()
+
+# ====================== Task 05 =========================
+class FinalQ: 
+
+    def print(self,array,idx): 
+        if(idx<len(array)): 
+            profit = self.calcProfit(array[idx]) 
+            #TO DO 
+            print(f"{idx+1}. Investent: {array[idx]}; Profit: {profit}")
+            self.print(array, idx+1)
+
+    def calcProfit(self,investment): 
+        if (investment <= 25000):
+            return 0.0
+        elif (investment > 25000 and investment <= 100000):
+            return 45 + self.calcProfit(investment-1000)
+        elif (investment > 100000):
+            return 80 + self.calcProfit(investment-1000)
+        else:
+            return 0
+
+print("========No. 5)========")
+array = [25000,100000,250000,350000] 
+f = FinalQ() 
+f.print(array,0)
