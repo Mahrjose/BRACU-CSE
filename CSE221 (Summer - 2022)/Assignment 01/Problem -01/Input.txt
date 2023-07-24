@@ -1,0 +1,5 @@
+1 madam
+2 apple
+3.6 racecar
+89 parrot
+45.2 discord
