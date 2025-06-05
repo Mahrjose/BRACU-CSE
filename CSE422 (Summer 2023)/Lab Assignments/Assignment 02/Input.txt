@@ -1,0 +1,21 @@
+3
+8 330
+Tamim 68
+Shoumyo 25
+Shakib 70
+Afif 53
+Mushfiq 71
+Liton 55
+Mahmudullah 66
+Shanto 29
+5 240
+Bradman 120
+Tendulkar 90
+Sangakkara 70
+Kallis 65
+Lara 80
+4 100
+Ralph 80
+John 70
+Tom 40
+Young 50
